@@ -2,9 +2,7 @@
 #include <string>
 #include <unordered_map>
 
-int main() {
-  
-}
+
 class MainMorseCodeTranslator {
 private:
     std::unordered_map<char, std::string> morseCodeMap;
@@ -23,6 +21,7 @@ MainMorseCodeTranslator(){
             {'4', "....-"}, {'5', "....."}, {'6', "-...."}, {'7', "--..."},
             {'8', "---.."}, {'9', "----."}, {'0', "-----"}, {' ', " "}
         };
+}
 
         std::string translateToMorse(const std::string& text) {
             std::string morse ="";
@@ -31,7 +30,7 @@ MainMorseCodeTranslator(){
 
                 if(morseCodeMap.find(c) != morseCodeMap.end())
                 {
-                    morse += morseCodeMap(c) + " ";
+                    morse += morseCodeMap[c] + " ";
 
                 }
                 else{
@@ -39,8 +38,8 @@ MainMorseCodeTranslator(){
                 }
             }
             return morse;
-        };
-}
+        }
+};
 
 int main() {
     MainMorseCodeTranslator translator;
@@ -56,4 +55,3 @@ int main() {
 }
 
 
-};
