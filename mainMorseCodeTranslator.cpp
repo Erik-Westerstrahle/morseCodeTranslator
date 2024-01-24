@@ -24,7 +24,7 @@ MainMorseCodeTranslator(){
             {'8', "---.."}, {'9', "----."}, {'0', "-----"}, {' ', " "}
         };
 
-        std:string translateToMorse(const std::string& text) {
+        std::string translateToMorse(const std::string& text) {
             std::string morse ="";
             for(char c : text) {
                 c =toupper(c);// Convert to uppercase for consistent mapping
@@ -39,8 +39,21 @@ MainMorseCodeTranslator(){
                 }
             }
             return morse;
-        }
-};
-
-
+        };
 }
+
+int main() {
+    MainMorseCodeTranslator translator;
+    std::string text;
+
+    std::cout << "Enter text to translate to Morse Code: ";
+    std::getline(std::cin, text);
+
+    std::string morseCode = translator.translateToMorse(text);
+    std::cout << "Morse Code: " << morseCode << std::endl;
+
+    return 0;
+}
+
+
+};
